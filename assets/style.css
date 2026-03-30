@@ -35,4 +35,69 @@
     --radius-md: 14px;
     --radius-lg: 20px;
     --radius-rd: 1000px;
+
+    /*padding*/
+    --padding-header: 24px 64px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding-header);
+    background: linear-gradient(to bottom, var(--color-dark-800) 0%, #09090900 100%);
+    font-family: "Inter", sans-serif;
+    letter-spacing: 2.5px;
+
+    nav{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .lien{
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 300;
+        color: var(--color-light-50);
+    }
+
+    .btn-lien{
+        text-decoration: none;
+        color: var(--color-light-50);
+
+    }
+}
+
+
+body {
+    background: #090909;
+}
+
+/*Bouton*/
+
+.btn{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 2.5px;
+    color: var(--color-light-100);
+    border: 1px solid var(--color-primary-400);
+    
+}
+
+.btn-sm{
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.btn-md{
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.btn-lg{
+    padding: 12px 24px;
+    font-size: 16px;
 }
