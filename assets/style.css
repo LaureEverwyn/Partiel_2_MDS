@@ -305,7 +305,7 @@ h1{
     }
 }
 
-#tableau{
+#formations{
     display: flex;
     padding: 64px 244px;
     flex-direction: column;
