@@ -283,13 +283,16 @@ h1{
     }
     
     h1{
-        text-align: center;
+        margin: 0;
         color: var(--color-light-100);
-        font-family: var(--font-txt);
+        font-family: var(--font-titre);
         font-size: 64px;
         font-weight: var(--font-weight-h);
-        font-style: normal;
+        font-style: normal;    
     }
+.exeption{
+            font-family: var(--font-txt);
+        }
 
     p{
         font-family: var(--font-txt);
@@ -301,6 +304,124 @@ h1{
         opacity: 0.7; 
     }
 }
+
+#tableau{
+    display: flex;
+    padding: 64px 244px;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 32px;
+    align-self: stretch;
+
+    h1{
+        margin: 0;
+        color: var(--color-light-100);
+        font-family: var(--font-titre);
+        font-size: var(--font-size-h1);
+        font-weight: var(--font-weight-h);
+        line-height: var(--line-height-h1);
+        font-style: normal;
+        text-transform: uppercase;
+        gap: 8px;
+        span#gris{
+            display: inline;
+            color: var(--color-light-800);
+            font-style: italic;
+            opacity: 0.7;
+        } 
+    }
+
+    .formations-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 0px;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 40px;
+        background-color: var(--color-dark-600);
+    }
+
+    .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    }
+
+    .card-number {
+        font-family: "Inter", sans-serif;
+        color: var(--color-light-800);
+        font-size: var(--font-size-txt);
+        font-weight: var(--font-weight-txt);
+        line-height: var(--line-height-txt);
+        letter-spacing: var(--letter-spacing-txt);
+    }
+
+    .card-lettre {
+        font-family: "Anta", serif; 
+        font-size: 64px;
+        font-weight: var(--font-weight-h);
+        color: var(--color-primary-400);
+        line-height: 64px;
+        opacity: 0.1;
+    }
+    .card-tag {
+        font-family: "Inter", sans-serif;
+        color: var(--color-primary-400);
+        font-size: var(--font-size-txt);
+        font-weight: var(--font-weight-txt);
+        letter-spacing: var(--letter-spacing-txt);
+        text-transform: uppercase;
+    }
+
+    .card h2 {
+        margin: 0;
+        font-family: "Playfair Display";
+        color: var(--color-light-100);
+        font-size: var(--font-size-h2);
+        font-weight: var(--font-weight-h);
+        line-height: var(--line-height-h2);
+    }
+
+    .card-desc {
+        font-family: "Inter", sans-serif;
+        color: var(--color-light-800);
+        font-size: var(--font-size-txt);
+        line-height: var(--line-height-txt);
+        font-weight: var(--font-weight-txt);
+    }
+
+    .card-link {
+        font-size: 12px;
+        font-weight: var(--font-weight-txt);
+        line-height: var(--line-height-txt);
+        text-decoration: none;
+        text-transform: uppercase;
+        background: none;
+        font-family: "Inter", sans-serif;
+        letter-spacing: 2.5px;
+        color: var(--color-light-100);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        align-self: flex-start;
+        padding: 6px 12px;
+        
+
+        &:hover{
+            background-color: color-mix(in srgb, var(--color-primary-400) 10%, transparent);
+            border: 1px solid var(--color-primary-400);
+        }    
+    }
+}
+
+   
+
+
+
 
 /*
 h1 italique{
