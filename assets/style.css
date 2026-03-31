@@ -30,6 +30,28 @@
     --color-primary-700: #04502C;
     --color-primary-800: #033E22;
 
+    /* Familles de polices */
+    --font-txt: "Inter", sans-serif;
+    --font-titre: "Playfair Display", serif;
+
+    /* Tailles */
+    --font-size-txt:   14px;
+    --font-size-h2:   28px;
+    --font-size-h1:  48px;
+
+    /* Graisse */
+    --font-weight-txt: 300;
+    --font-weight-h: 400;
+
+    /* Letter spacing */
+    --letter-spacing-txt: 2.5px;
+
+    /* Line height */
+    --line-height-txt:  18px;
+    --line-height-h2: 38px;
+    --line-height-h1:  50px;
+
+
     /*Bordure*/
     --radius-sm: 8px;
     --radius-md: 14px;
@@ -40,50 +62,20 @@
     --padding-header: 24px 64px;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: var(--padding-header);
-    background: linear-gradient(to bottom, var(--color-dark-800) 0%, #09090900 100%);
-    font-family: "Inter", sans-serif;
-    letter-spacing: 2.5px;
-
-    nav{
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        gap: 32px;
-    }
-
-    .lien{
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 14px;
-        font-weight: 300;
-        color: var(--color-light-50);
-    }
-
-    .btn-lien{
-        text-decoration: none;
-        color: var(--color-light-50);
-
-    }
-}
-
-
-body {
-    background: #090909;
-}
-
 /*Bouton*/
 
 .btn{
     text-decoration: none;
     text-transform: uppercase;
+    background: none;
     font-family: "Inter", sans-serif;
     letter-spacing: 2.5px;
     color: var(--color-light-100);
     border: 1px solid var(--color-primary-400);
+
+    &:hover{
+         background-color: color-mix(in srgb, var(--color-primary-400) 10%, transparent);
+    }
     
 }
 
@@ -101,3 +93,143 @@ body {
     padding: 12px 24px;
     font-size: 16px;
 }
+
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding-header);
+    background: linear-gradient(to bottom, var(--color-dark-800) 0%, transparent 100%);
+    font-family: "Inter", sans-serif;
+    letter-spacing: 2.5px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    nav{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .lien {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--color-light-50);
+    padding-bottom: 4px;
+    position: relative;
+    transition: color 200ms ease;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: var(--color-primary-400);
+        transition: width 300ms ease;
+    }
+
+    &:hover {
+        color: var(--color-primary-400);
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}}
+
+
+body {
+    background: var(--color-dark-800);
+    color: var(--color-light-100);
+}
+
+h1{
+    color: var(--color-light-100);
+    font-family: var(--font-titre);
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-h);
+    line-height: var(--line-height-h1);
+    font-style: italic;
+    span{
+        color: var(--color-primary-400);
+        display: block;
+        margin-top: 8px; 
+    }
+}
+
+#hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    min-height: 100vh;
+
+    background-image: url('./img/Background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .btn{
+    gap: 35px;
+    }
+}
+
+.voir-suite {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    p {
+        font-family: var(--font-txt);
+        color: var(--color-light-50);
+        font-size: 12px;
+        font-weight: 300;
+        letter-spacing: var(--letter-spacing-txt);
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    .btn-scroll {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-rd);
+        border: 2px solid transparent;
+        background-color: color-mix(in srgb, var(--color-primary-400) 30%, transparent);
+        cursor: pointer;
+        transition: all 400ms ease;
+
+        img {
+        width: 16px;
+        transition: all 400ms ease;
+        }
+
+        &:hover {
+        transform: scale(0.85) translateY(4px); 
+    }
+    }
+}
+
+
+
