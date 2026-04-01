@@ -9,7 +9,7 @@ window.onload = function() {
     function animate() {
         position -= 1;
         if (Math.abs(position) === originalWidth) {
-            position = 30;
+            position = 31;
         }
         track.style.transform = `translateX(${position}px)`;
         requestAnimationFrame(animate);
