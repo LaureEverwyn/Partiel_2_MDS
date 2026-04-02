@@ -767,10 +767,10 @@ form {
 }
 
 /* Mettez vos images ici */
-#radio-audiovisuel { background-image: url('./img/fond.png'); }
-#radio-horlogerie  { background-image: url('./img/fond-hor.png'); }
-#radio-mecanique   { background-image: url('./img/fond-meca.png'); }
-#radio-bienetre    { background-image: url('./img/fond-beau.png'); }
+#radio-audiovisuel { background-image: url('../img/fond.png'); }
+#radio-horlogerie  { background-image: url('../img/fond-hor.png'); }
+#radio-mecanique   { background-image: url('../img/fond-meca.png'); }
+#radio-bienetre    { background-image: url('../img/fond-beau.png'); }
 
 .radio-card {
     position: relative;
