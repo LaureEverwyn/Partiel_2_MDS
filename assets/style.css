@@ -340,6 +340,10 @@ header {
     align-items: center;
     gap: 12px;
 
+    .sous-titre{
+        color: var(--color-light-100);
+    }
+
     .btn-scroll {
         display: flex;
         align-items: center;
@@ -630,7 +634,6 @@ header {
 .galerie {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 24px;
     align-self: stretch;
     padding-bottom: 64px;
@@ -639,18 +642,21 @@ header {
         width: 100%;
         height: 400px;
         object-fit: cover;
+        display: block;
     }
 
     .lesplus {
-        width: 100%;
-        align-items: stretch;
-    }
+        display: flex;
+        gap: 24px;
+        width: 100%; /* même largeur que .grand */
 
-    .gauche,
-    .droite {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
+        .gauche,
+        .droite {
+            flex: 1; /* chacune prend 50% */
+            height: 300px;
+            object-fit: cover;
+            min-width: 0; /* évite le débordement */
+        }
     }
 }
 
@@ -921,6 +927,61 @@ button[type="submit"] {
     img {width: 24px;}
 }
 
+/* =====================
+   FAQ
+   ===================== */
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding: var(--padding-section);
+    padding-top: 120px;
+}
+
+.section_faq {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    h2 {
+        margin-bottom: 8px;
+        &.border{
+            border-top: solid 1px var(--color-primary-400);
+            padding-top: 64px;
+        }
+        
+    }
+
+    .sous-titre {
+        font-size: 16px;
+        color: var(--color-light-100);
+        margin-top: 16px;
+        border-bottom: solid 1px var(--color-light-50);
+        padding-bottom: 16px;
+    }
+
+    .p {
+        color: var(--color-light-500);
+        line-height: normal;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin-top: 16px;
+
+        &#img-tableau {
+            width: 360px;
+            height: 192px;
+            max-width: 100% ;
+            object-fit: unset ;
+        }
+    }
+}
+
+
 
 /* =====================
    HAMBURGER
@@ -1075,6 +1136,15 @@ button[type="submit"] {
 
     .info {
         width: 100%;
+    }
+
+    /* --- FAQ --- */
+
+    #img-tableau {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        object-fit: unset;
     }
 
     /* --- FOOTER --- */
