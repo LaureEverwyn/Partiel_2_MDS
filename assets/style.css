@@ -654,4 +654,434 @@ header {
     }
 }
 
+/* =====================
+   LAYOUT CONTACT
+   ===================== */
 
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: var(--padding-section);
+    padding-top: 120px;
+}
+
+.form-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h1 { margin: 0; }
+    p  { margin: 0; }
+}
+
+.form-content {
+    display: flex;
+    gap: 64px;
+    align-items: flex-start;
+}
+
+/* =====================
+   FORMULAIRE
+   ===================== */
+
+#form { flex: 1; }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Titre de section vert + trait */
+.form-section-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+
+    .sous-titre { white-space: nowrap; }
+
+    .trait {
+        flex: 1;
+        height: 1px;
+        background-color: var(--color-primary-400);
+    }
+}
+
+/* Lignes avec 2 inputs côte à côte */
+.row {
+    display: flex;
+    gap: 16px;
+
+    .input-group { flex: 1; }
+}
+
+/* Groupes d'inputs */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+        font-family: var(--font-txt);
+        font-size: var(--font-size-txt);
+        font-weight: var(--font-weight-txt);
+        letter-spacing: var(--letter-spacing-txt);
+        text-transform: uppercase;
+        color: var(--color-light-800);
+    }
+
+    input, textarea {
+        background: transparent;
+        border: 1px solid var(--color-light-50);
+        border-radius: 0; /* pas de border radius */
+        padding: 12px 16px;
+        color: var(--color-light-100);
+        font-family: var(--font-txt);
+        font-size: var(--font-size-txt);
+        outline: none;
+        transition: border 200ms ease;
+
+        &::placeholder { color: var(--color-light-800); opacity: 0.4; }
+        &:focus { border-color: var(--color-primary-400); }
+    }
+
+    textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+}
+
+/* Radio formations */
+.radio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+/* Mettez vos images ici */
+#radio-audiovisuel { background-image: url('/assets/img/fond.png'); }
+#radio-horlogerie  { background-image: url('/assets/img/fond-hor.png'); }
+#radio-mecanique   { background-image: url('/assets/img/fond-meca.png'); }
+#radio-bienetre    { background-image: url('/assets/img/fond-beau.png'); }
+
+.radio-card {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    height: 100px;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        border: 2px solid transparent;
+        border-radius: var(--radius-md);
+        transition: all 200ms ease;
+    }
+
+    &:has(input:checked)::after {
+        background: rgba(0, 0, 0, 0);
+        border-color: var(--color-primary-400);
+    }
+
+    input[type="radio"] {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 2;
+        appearance: none;
+        border: 2px solid var(--color-light-50);
+        border-radius: 50%;
+        transition: all 200ms ease;
+        margin: 0;
+        top: 50%;
+        left: 16px;
+        transform: translateY(-50%);
+
+        &:checked {
+            border-color: var(--color-primary-400);
+            background: var(--color-primary-400);
+            box-shadow: 0 0 0 3px rgba(9, 188, 104, 0.3);
+        }
+    }
+
+    label {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0;
+        font-family: var(--font-txt);
+        font-size: var(--font-size-txt);
+        font-weight: 500;
+        letter-spacing: var(--letter-spacing-txt);
+        text-transform: uppercase;
+        color: var(--color-light-50);
+        cursor: pointer;
+    }
+}
+
+button[type="submit"] {
+    align-self: center;
+    margin-top: 8px;
+}
+
+/* =====================
+   INFO DROITE
+   ===================== */
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+    background: var(--color-dark-600);
+    align-items: flex-start;
+}
+
+.horaires {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    
+}
+
+.jours {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+
+    p {
+        margin: 0;
+        font-family: var(--font-txt);
+        font-size: var(--font-size-txt);
+        font-weight: var(--font-weight-txt);
+        color: var(--color-light-100);
+    }
+
+    .jour {
+        margin: 0;
+        font-family: var(--font-txt);
+        font-size: 16px;
+        font-weight: 700;
+        font-style: normal;
+        line-height: normal;
+        color: var(--color-light-100);
+    }
+
+.heures {
+    margin: 0;
+    font-family: var(--font-txt);
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: normal;
+    color: var(--color-light-100);
+}
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    p:not(.sous-titre) { 
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        font-family: var(--font-txt);
+        font-size: var(--font-size-txt);
+        font-weight: var(--font-weight-txt);
+        color: var(--color-light-100);
+    }
+
+    img { width: 16px; }
+}
+
+.reseau {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    img {width: 24px;}
+}
+
+
+/* =====================
+   HAMBURGER
+   ===================== */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 20;
+    position: relative;
+
+    span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--color-light-50);
+        transition: all 300ms ease;
+        transform-origin: center;
+    }
+
+    /* Animation croix */
+    &.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    &.open span:nth-child(2) { opacity: 0; }
+    &.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+/* =====================
+   RESPONSIVE MOBILE
+   ===================== */
+
+@media (max-width: 768px) {
+
+    /* --- HEADER --- */
+    header {
+        padding: 16px 24px;
+
+        .hamburger { display: flex; }
+
+        nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--color-dark-800);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            z-index: 15;
+
+            &.open { display: flex; }
+
+            .lien { font-size: 20px; }
+            .btn  { font-size: 16px; }
+        }
+    }
+
+    /* --- VARIABLES --- */
+    :root {
+        --padding-section: 48px 24px;
+        --font-size-h1: 32px;
+        --font-size-h2: 22px;
+        --line-height-h1: 38px;
+        --line-height-h2: 28px;
+    }
+
+    /* --- HERO --- */
+    #hero {
+        padding: 0 24px;
+        text-align: center;
+    }
+
+    /* --- CHIFFRES --- */
+    #chiffre #content_chiffre {
+        gap: 16px;
+
+        .content { flex: 1 1 100%; } /* une colonne */
+    }
+
+    /* --- FORMATIONS --- */
+    #formations {
+        gap: 32px;
+
+        .formations-grid {
+            grid-template-columns: 1fr; /* une colonne */
+        }
+    }
+
+    /* --- CAROUSSEL --- */
+    #section_caroussel {
+        padding: 48px 24px;
+    }
+
+    /* --- PÉDAGOGIE --- */
+    #section_pedago #texte-image {
+        flex-direction: column; /* image en dessous du texte */
+
+        img { width: 100%; }
+    }
+
+    /* --- PRÉSENTATION AUDIOVISUEL --- */
+    .bloc {
+        flex-direction: column;
+        gap: 32px;
+
+        .titre-p { max-width: 100%; }
+    }
+
+    .gouv {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    /* --- INFORMATION AUDIOVISUEL --- */
+    .information { padding: 0 24px; }
+
+    .lesplus { flex-direction: column; }
+
+    .galerie {
+        .lesplus { flex-direction: column; }
+
+        .gauche,
+        .droite { height: 200px; }
+    }
+
+    /* --- CONTACT --- */
+    main {
+        padding: 100px 24px 48px;
+    }
+
+    .form-content {
+        flex-direction: column; /* info droite passe en bas */
+        gap: 32px;
+    }
+
+    .row {
+        flex-direction: column; /* inputs en colonne */
+        gap: 16px;
+    }
+
+    .radio-grid {
+        grid-template-columns: 1fr; /* une colonne */
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    /* --- FOOTER --- */
+    #section_footer #footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 24px;
+        gap: 32px;
+    }
+}
