@@ -766,10 +766,10 @@ form {
     gap: 14px;
 }
 
-#radio-audiovisuel { background-image: url('/Partiel_2_MDS/assets/img/fond.png'); }
-#radio-horlogerie  { background-image: url('/Partiel_2_MDS/assets/img/fond-hor.png'); }
-#radio-mecanique   { background-image: url('/Partiel_2_MDS/assets/img/fond-meca.png'); }
-#radio-bienetre    { background-image: url('/Partiel_2_MDS/assets/img/fond-beau.png'); }
+#radio-audiovisuel { background-image: url('./img/fond.png'); }
+#radio-horlogerie  { background-image: url('./img/fond-hor.png'); }
+#radio-mecanique   { background-image: url('./img/fond-meca.png'); }
+#radio-bienetre    { background-image: url('./img/fond-beau.png'); }
 
 .radio-card {
     position: relative;
