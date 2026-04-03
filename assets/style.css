@@ -648,12 +648,12 @@ header {
     .lesplus {
         display: flex;
         gap: 24px;
-        width: 100%; /* même largeur que .grand */
+        width: 98%; /* même largeur que .grand */
 
         .gauche,
         .droite {
             flex: 1; /* chacune prend 50% */
-            height: 300px;
+            height: auto;
             object-fit: cover;
             min-width: 0; /* évite le débordement */
         }
