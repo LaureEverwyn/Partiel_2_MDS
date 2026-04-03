@@ -1111,7 +1111,7 @@ button[type="submit"] {
         .lesplus { flex-direction: column; }
 
         .gauche,
-        .droite { height: 200px; }
+        .droite { height: auto; }
     }
 
     /* --- CONTACT --- */
